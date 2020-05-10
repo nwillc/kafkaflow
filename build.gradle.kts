@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.3.72"
@@ -16,20 +17,21 @@ dependencies {
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.6.1")
     testImplementation("org.assertj:assertj-core:3.16.1")
+    testImplementation("org.testcontainers:testcontainers:1.14.1")
+    testImplementation("org.testcontainers:kafka:1.14.1")
+
+    testRuntimeOnly("org.slf4j:slf4j-simple:1.7.30")
 }
 
 tasks {
-    compileKotlin {
-        kotlinOptions.jvmTarget = "1.8"
-    }
-    compileTestKotlin {
-        kotlinOptions.jvmTarget = "1.8"
+    withType<KotlinCompile> {
+        kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
     withType<Test> {
-          useJUnitPlatform()
-          testLogging {
-              showStandardStreams = true
-              events("passed", "failed", "skipped")
-          }
-      }
+        useJUnitPlatform()
+        testLogging {
+            showStandardStreams = true
+            events("passed", "failed", "skipped")
+        }
+    }
 }
