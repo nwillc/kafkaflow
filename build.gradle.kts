@@ -20,6 +20,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.6.1")
     testImplementation("org.assertj:assertj-core:3.16.1")
     testImplementation("org.testcontainers:testcontainers:1.14.1")
+    testImplementation("org.testcontainers:junit-jupiter:1.14.1")
     testImplementation("org.testcontainers:kafka:1.14.1")
 
     testRuntimeOnly("org.slf4j:slf4j-simple:1.7.30")
