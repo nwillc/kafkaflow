@@ -15,8 +15,6 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.6")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.11.0")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.11.0")
     implementation("org.apache.kafka:kafka-clients:2.5.0")
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.6.1")
